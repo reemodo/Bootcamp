@@ -1,0 +1,87 @@
+#chat{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 15fr 1fr;
+    grid-template-areas: 
+    "f c"
+    "f i";
+}
+#friends{
+    grid-area: f;
+    display: grid;
+    background-color: purple;
+}
+.friends-names{
+    height: 15px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(238 172 238 / 23%);
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.friends-title{
+    margin-left: 10px;
+    font-family: monospace;
+}
+
+
+#chatbox{
+    grid-area: c;
+    display: grid;
+    background-color: rgb(198, 195, 195);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
+}
+
+p{
+    display: inline;
+}
+.text-container{
+    grid-template-columns: 1fr 0.2fr;
+    border-radius: 4px;
+    display: grid;
+    height: fit-content;
+    align-items: end;
+    width: fit-content;
+    grid-gap: 7px;
+    margin: 10px;
+    font-family: Cursive;
+}
+.time{
+    font-size: x-small;
+}
+.text {
+    font-size: 20px;
+    align-content: center;
+    margin: 5px;
+}
+
+.text-container.left{
+    background-color: gray;
+    
+}
+.text-container.right{
+    background-color: green;
+    justify-self: right;
+}
+
+
+
+
+#input {
+    grid-area: i;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.input-text{
+    display: grid;
+}
+.input-button{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color:purple ;
+    color: white;
+}
