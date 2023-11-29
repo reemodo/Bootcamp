@@ -17,17 +17,11 @@
 //     }, function(){
 //         $(".box").css("background-color", "#8e44ad");
 // }))
-$(".helo").on("click",console.log($(this)))
+
+
+
+
  $(".item").click(function(){
-    let self0 = $(this)
-    console.log("hi" + $(this))
-    
-    // console.log($(this).data())
-     console.log(self0.class)
-    // validChanges(this,data)
+    if ($(this).data().instock === true){
+        $('body').append('<div >'+ $(this).text()+'</div> ');}  
 })
-validChanges = function(obj,data){
-    if ($(obj).data("data_instock") === true){
-        $('body').append('<div >'+ $(obj).text()+'</div> ');}
-        else {console.log($(obj).data());}
-}

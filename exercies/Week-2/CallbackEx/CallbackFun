@@ -21,7 +21,8 @@ getTime(returnTime)
 // Exercise 4 - Arrow Functions
 
 // Create an arrow function that receives three parameters and returns their sum - it should be one line.
-const sum = (x,y,z) => x+y+z
+const sum = (x,y,z) => {
+  return x+y+z}
 
 
 // Exercise 5 - Arrow Functions

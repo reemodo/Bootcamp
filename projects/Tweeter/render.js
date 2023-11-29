@@ -1,21 +1,31 @@
 const postsList = $("#posts")
+
 const printComments = function(comments){
     let addedHtml = ""
-    for (let comment of comments)
-        addedHtml += "<li>"+ comment.text +"</li>"
-    return  addedHtml
+    let HtmlDeleteCommentButon = "<spin class='delete-comment' id='deleteComment'> X </spin>"
+        for (let comment of comments)
+        addedHtml += "<li data-id='"+ comment.id +"'>"+ HtmlDeleteCommentButon + comment.text +"</li>"
+    return   "<lu>"+ addedHtml+"</lu>"
 }
+
 const printPosts = function(post){
-    postsList.append("<div> <p>"+ post.text +"</p> <lu>"+ printComments(post.comments)+"</lu><div>")
+    return "<p class='post-text'>"+ post.text +"</p>"
 }
+
 const removePostsEleement = function(){
     postsList.empty()
 }
+
 const Renderer = function(posts){
     const renderPosts = function(posts){
         removePostsEleement()
         for(let post of posts){
-            printPosts(post)
+            let HTMLPost =  printPosts(post)
+            let HtmlCommenttext = " <input type='text' placeholder='Commint what's on your mind?' id='commentInput'>"
+            let HtmlAddCommentsButton = "<input class='button' id='addCommentsButton' value='Add Comment' type='button'/>"
+            let HtmlDeletePostButon = "<input class='delete' id='deletePostButon' value='Delete Post' type='button'/>"
+            let HtmlCommentsList = printComments(post.comments)
+            postsList.append("<div data-id='"+ post.id +"'> "+HTMLPost +HtmlCommenttext+ HtmlAddCommentsButton + HtmlDeletePostButon + HtmlCommentsList + "</div>")
         }
     }
     return{
