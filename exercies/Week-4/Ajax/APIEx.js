@@ -53,13 +53,14 @@
 const fetch = function (input) {
     $.ajax({
         method: "GET",
-        url : "https://api.giphy.com/v1/stickers/search?api_key=BbapDliSM0MOwoZWKlELEHVepw9UfKKU&q="+input+"&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips",
+        // url : "https://api.giphy.com/v1/stickers/search?api_key=BbapDliSM0MOwoZWKlELEHVepw9UfKKU&q="+input+"&type=gif&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips",
+        url : "https://api.giphy.com/v1/gifs/search?api_key=BbapDliSM0MOwoZWKlELEHVepw9UfKKU&q=cat&lang=en&limit=20",
         success: function (response) {
             // console.log(data)
             response.data.forEach(img => {
             // console.log(img.url)
             
-                $("body").append("<iframe src='"+img.embed_url+"'/>")
+                $(".gifsContainer").append("<iframe src='"+img.embed_url+"'/>")
             });
         },
         error: function (xhr, text, error) {
