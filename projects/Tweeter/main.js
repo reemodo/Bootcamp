@@ -8,9 +8,17 @@ tweeter.addComment("p1","Second comment on first post!!")
 tweeter.addComment("p1","Third comment on first post!!!")
 renderer.renderPosts(tweeter.getPosts())
 let post = $("#posts")
+let wisdom = []
+
 $("#post").click(function (){
     tweeter.addPost($('#input').val()) 
-    renderer.renderPosts(tweeter.getPosts())})
+    renderer.renderPosts(tweeter.getPosts())
+    wisdom.push({"text":$('#input').val()})
+    if (wisdom.length % 2 === 0){
+        localStorage.setItem("wisdom" , (JSON.stringify(wisdom)))
+        console.log(localStorage["wisdom"])
+    }
+})
 
 post.on("click","#deletePostButon",function (){
     tweeter.removePost($(this).closest("div").data().id) 
