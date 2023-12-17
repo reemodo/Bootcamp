@@ -20,9 +20,10 @@ app.get('/buy/:name', function(req, res){
     res.send( `Congratulations, you’ve just bought ${wantedStore.name} for ${wantedStore.price}. There are ${wantedStore.inventory} left now in the store.`)
     
 })
+//TODO
 app.get('/sale/admin?', function(req, res){
     if(req.params.admin === "true")
-    const wantedStore = store.find(s => s.name == name)
+   
     wantedStore.inventory -= 1
     res.send( `Congratulations, you’ve just bought ${wantedStore.name} for ${wantedStore.price}. There are ${wantedStore.inventory} left now in the store.`)
     
