@@ -41,11 +41,11 @@ function App() {
 
   return (
     <>
-      {/* ex1
-      <Landing user= {user} hottestItem={findHottest(store)}/>
-     <hr></hr>
-     <h4>Store</h4>
-      <Home store={store}/> */}
+      {/* ex1:
+        <Landing user= {user} hottestItem={findHottest(store)}/>
+        <hr></hr>
+        <h4>Store</h4>
+        <Home store={store}/> */}
       {showPage(currentPage, shouldDiscount, updateShouldDiscount)}
       <button onClick={updateCurrentPage}>Change your page</button>
 
